@@ -1,0 +1,8 @@
+{
+  "name": "ABC Architecture",
+  "description": "Editorial minimalist residential architecture portfolio for ABC Architecture in Khandagiri, Bhubaneswar — featuring Swiss-grid monographs, recent residential works, client testimonials, and studio commission inquiries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
