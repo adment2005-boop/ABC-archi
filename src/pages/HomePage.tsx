@@ -433,17 +433,35 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="mx-auto flex max-w-[1440px] flex-wrap items-center justify-between gap-4 px-6 py-5 md:px-10">
             <div className="flex items-center gap-4">
               <span className="h-2 w-2 bg-[#C5A059] shrink-0" aria-hidden="true" />
-              <h2 className="text-sm sm:text-base font-medium uppercase tracking-[0.18em] text-[#080808]">
-                {activeProject.title}
-              </h2>
+              <AnimatePresence mode="wait">
+                <motion.h2
+                  key={activeProject.id}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="text-sm sm:text-base font-medium uppercase tracking-[0.18em] text-[#080808]"
+                >
+                  {activeProject.title}
+                </motion.h2>
+              </AnimatePresence>
             </div>
 
-            <div className="flex items-center gap-5 text-xs sm:text-sm uppercase tracking-[0.18em] text-[#696969]">
-              <span>{activeProject.city}</span>
-              <span className="font-mono font-medium tabular-nums text-[#080808]">
-                {activeIndex + 1}/{RESIDENTIAL_PROJECTS.length}
-              </span>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProject.id}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="flex items-center gap-5 text-xs sm:text-sm uppercase tracking-[0.18em] text-[#696969]"
+              >
+                <span>{activeProject.city}</span>
+                <span className="font-mono font-medium tabular-nums text-[#080808]">
+                  {activeIndex + 1}/{RESIDENTIAL_PROJECTS.length}
+                </span>
+              </motion.div>
+            </AnimatePresence>
           </div>
         </div>
 
@@ -509,7 +527,16 @@ export const HomePage: React.FC<HomePageProps> = ({
         {/* 4. ASYMMETRIC 2-COLUMN PROJECT DETAIL SECTION */}
         <div className="relative overflow-hidden border-b border-[#E5E5E5] bg-white">
           <BlueprintGeometry variant="subtle" theme="light" />
-          <div className="relative z-10 mx-auto max-w-[1440px] grid grid-cols-1 lg:grid-cols-12">
+          <div className="relative z-10 mx-auto max-w-[1440px]">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeProject.id}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -22 }}
+                transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                className="grid grid-cols-1 lg:grid-cols-12"
+              >
             {/* Left Column: Small Bulleted 'PROJECT' Label + Real-Life Preview Card */}
             <div className="lg:col-span-4 lg:border-r border-[#E5E5E5] p-6 py-12 md:p-10 lg:py-16 flex flex-col justify-between gap-10">
               <div>
@@ -624,11 +651,13 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </AnimatePresence>
+      </div>
+    </div>
+  </section>
 
-      {/* 5. PHILOSOPHY SECTION: INLINE HORIZONTAL RULES (—) BREAKING UP BOLD UPPERCASE TYPOGRAPHY */}
+  {/* 5. PHILOSOPHY SECTION: INLINE HORIZONTAL RULES (—) BREAKING UP BOLD UPPERCASE TYPOGRAPHY */}
       <section className="relative overflow-hidden border-b border-[#E5E5E5] bg-[#080808] text-white">
         <BlueprintGeometry variant="philosophy" theme="dark" />
         <div className="relative z-10 mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-28">
