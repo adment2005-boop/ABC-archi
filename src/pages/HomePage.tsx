@@ -9,6 +9,10 @@ import {
   Play,
   ChevronLeft,
   ChevronRight,
+  Star,
+  Award,
+  Building2,
+  Users,
 } from 'lucide-react';
 import {
   ArchitecturalProject,
@@ -297,6 +301,126 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <span>All 08 Works</span>
                   <ArrowRight className="h-3.5 w-3.5" strokeWidth={1.5} />
                 </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 1.5 ARCHITECTURAL PERFORMANCE STATS BAR */}
+      <section
+        aria-label="Practice Performance and Trust Metrics"
+        className="relative z-20 border-b border-[#C5A059]/30 bg-[#0B0B0B] text-white"
+      >
+        <div className="mx-auto max-w-[1440px]">
+          <div className="grid grid-cols-2 divide-y divide-white/10 sm:grid-cols-2 sm:divide-y-0 lg:grid-cols-4 lg:divide-x divide-white/10">
+            {/* Stat 1: 5 Years of Experience */}
+            <div className="group relative flex flex-col justify-between p-6 sm:p-8 lg:p-10 transition-colors hover:bg-white/[0.03]">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#C5A059]">
+                  01 / EXPERIENCE
+                </span>
+                <Award className="h-4 w-4 text-[#C5A059]/80 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+              </div>
+              <div className="mt-5 sm:mt-7">
+                <div className="flex items-baseline gap-1">
+                  <span className="font-sans text-3xl sm:text-4xl lg:text-5xl font-light tracking-[-0.03em] text-white tabular-nums">
+                    05
+                  </span>
+                  <span className="text-xl sm:text-2xl font-light text-[#C5A059]">+</span>
+                  <span className="ml-1.5 font-mono text-[10px] uppercase tracking-[0.16em] text-white/50">
+                    Years
+                  </span>
+                </div>
+                <h3 className="mt-2 text-xs sm:text-sm font-medium uppercase tracking-[0.14em] text-white/90">
+                  Years of Experience
+                </h3>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.06em] text-white/50 leading-relaxed">
+                  Established architectural practice across Odisha
+                </p>
+              </div>
+            </div>
+
+            {/* Stat 2: 170 Projects Delivered */}
+            <div className="group relative flex flex-col justify-between p-6 sm:p-8 lg:p-10 transition-colors hover:bg-white/[0.03] border-t sm:border-t-0 border-white/10">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#C5A059]">
+                  02 / COMMISSIONS
+                </span>
+                <Building2 className="h-4 w-4 text-[#C5A059]/80 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+              </div>
+              <div className="mt-5 sm:mt-7">
+                <div className="flex items-baseline gap-1">
+                  <span className="font-sans text-3xl sm:text-4xl lg:text-5xl font-light tracking-[-0.03em] text-white tabular-nums">
+                    170
+                  </span>
+                  <span className="text-xl sm:text-2xl font-light text-[#C5A059]">+</span>
+                </div>
+                <h3 className="mt-2 text-xs sm:text-sm font-medium uppercase tracking-[0.14em] text-white/90">
+                  Projects Delivered
+                </h3>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.06em] text-white/50 leading-relaxed">
+                  Residential villas, urban homes & pavilions
+                </p>
+              </div>
+            </div>
+
+            {/* Stat 3: 4.8 Google Rating */}
+            <div className="group relative flex flex-col justify-between p-6 sm:p-8 lg:p-10 transition-colors hover:bg-white/[0.03] border-t lg:border-t-0 border-white/10">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#C5A059]">
+                  03 / GOOGLE RATING
+                </span>
+                <div className="flex items-center gap-0.5" aria-label="5 star rating">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="h-3.5 w-3.5 fill-[#C5A059] text-[#C5A059]"
+                      strokeWidth={1}
+                    />
+                  ))}
+                </div>
+              </div>
+              <div className="mt-5 sm:mt-7">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="font-sans text-3xl sm:text-4xl lg:text-5xl font-light tracking-[-0.03em] text-white tabular-nums">
+                    4.8
+                  </span>
+                  <span className="font-mono text-xs text-[#C5A059]">★</span>
+                  <span className="ml-1 font-mono text-[10px] uppercase tracking-[0.16em] text-white/50">
+                    / 5.0
+                  </span>
+                </div>
+                <h3 className="mt-2 text-xs sm:text-sm font-medium uppercase tracking-[0.14em] text-white/90">
+                  Google Rating
+                </h3>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.06em] text-white/50 leading-relaxed">
+                  Verified client ratings & top-tier reviews
+                </p>
+              </div>
+            </div>
+
+            {/* Stat 4: Satisfied Clients */}
+            <div className="group relative flex flex-col justify-between p-6 sm:p-8 lg:p-10 transition-colors hover:bg-white/[0.03] border-t lg:border-t-0 border-white/10">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[10px] sm:text-[11px] uppercase tracking-[0.22em] text-[#C5A059]">
+                  04 / TRUST
+                </span>
+                <Users className="h-4 w-4 text-[#C5A059]/80 transition-transform duration-300 group-hover:scale-110" strokeWidth={1.5} />
+              </div>
+              <div className="mt-5 sm:mt-7">
+                <div className="flex items-baseline gap-1">
+                  <span className="font-sans text-3xl sm:text-4xl lg:text-5xl font-light tracking-[-0.03em] text-white tabular-nums">
+                    160
+                  </span>
+                  <span className="text-xl sm:text-2xl font-light text-[#C5A059]">+</span>
+                </div>
+                <h3 className="mt-2 text-xs sm:text-sm font-medium uppercase tracking-[0.14em] text-white/90">
+                  Satisfied Clients
+                </h3>
+                <p className="mt-1 text-[11px] uppercase tracking-[0.06em] text-white/50 leading-relaxed">
+                  Transparent collaboration & on-schedule handover
+                </p>
               </div>
             </div>
           </div>
